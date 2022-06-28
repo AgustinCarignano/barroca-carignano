@@ -46,10 +46,15 @@ header{
 .navegacion__links li{
     border-bottom: solid 2px #E7D3CA;
     margin: 0 10px 0 20px;
+    transition: transform 0.3s;
 }
 
 .navegacion a{
     color: #E7D3CA;
+}
+
+.navegacion__links li:hover {
+    transform: scale(1.3);
 }
 
 .navegacion__hambur{
@@ -90,10 +95,19 @@ main{
 
 .presentacion img{
     width: 33%;
+    transition: transform 0.3s;
+}
+
+.presentacion img:hover {
+    transform: scale(1.05);
 }
 
 /* Tarjetas index */
-.oferta{
+.tarjeta {
+    background-image: linear-gradient(-45deg, #A67791, #E7D3CA);
+}
+
+.tarjeta__oferta{
     display: grid;
     grid-template-areas:
     "titulo imagen"
@@ -109,7 +123,8 @@ main{
     max-width: 1200px;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: -10px -10px 10px 10px rgb(137, 52, 146, 20%);
+    /* box-shadow: -10px -10px 10px 10px rgb(137, 52, 146, 20%); */
+    
 }
 
 .oferta__titulo{
@@ -127,12 +142,20 @@ main{
     max-width: 330px;
 }
 
-.oferta button{
+.tarjeta button{
     font-family: 'Antic Slab', serif;
     font-size: 2rem;
     width: 100px;
     padding: 0.7rem;
     border-radius: 20px;
+    background-color: #E7D3CA;
+    transition: background-color 0.3s, font-weight 0.3s, transform 0.3s;
+}
+
+.tarjeta button:hover {
+    background-color: #ffff;
+    font-weight: bolder;
+    transform: scale(1.2);
 }
 
 .oferta__img img{
@@ -305,7 +328,9 @@ main{
     max-width: 1200px;
     justify-content: center;
     margin: 20px auto;
+    padding: 20px;
 }
+
 
 .articulo__texto{
     /* font-size: 3rem; */
@@ -325,6 +350,14 @@ main{
 
 .articulo__img img{
     width: 100%;
+    transition: transform 0.3s;
+}
+
+.container__articulo:hover {
+    background-image: linear-gradient(60deg, #A67791, #E7D3CA 20% 80%, #A67791);
+}
+.articulo__img img:hover {
+    transform: rotate(5deg);
 }
 
 .botonContacto{
@@ -368,11 +401,19 @@ main{
     background-color: rgb(137, 52, 146, 40%);
     display: inline-block;
     max-width: 1200px;
+    transition: background-color 0.3s;
 }
 .quienesSomos h2{
     background-color: rgb(137, 52, 146, 40%);
+    transition: background-color 0.3s;
 }
 
+.quienesSomos h2:hover {
+    background-color: rgb(137, 52, 146, 80%);
+}
+.quienesSomos p:hover {
+    background-color: rgb(137, 52, 146, 80%);
+}
 
 .asesoria{
     font-size: 3rem;
