@@ -105,6 +105,7 @@ main{
 /* Tarjetas index */
 .tarjeta {
     background-image: linear-gradient(-45deg, #A67791, #E7D3CA);
+    align-items: center;
 }
 
 .tarjeta__oferta{
@@ -433,10 +434,10 @@ El menú tipo hamburguesa en el index y la página productos aparece pero no imp
         grid-template-columns: repeat(3, 1fr);
     }
     
-    .oferta{
+    .tarjeta__oferta{
         font-size: 2.5rem;
     }
-    .oferta button{
+    .tarjeta__oferta button{
         font-size: 1.5rem;
         margin-top: 30px;
     }
@@ -450,10 +451,10 @@ El menú tipo hamburguesa en el index y la página productos aparece pero no imp
 }
 
 @media screen and (max-width: 700px) {
-    .oferta{
+    .tarjeta__oferta{
         font-size: 2rem;
     }
-    .oferta button{
+    .tarjeta__oferta button{
         font-size: 1.3rem;
         margin-top: 20px;
     }
@@ -506,6 +507,24 @@ El menú tipo hamburguesa en el index y la página productos aparece pero no imp
         margin-right: 30px;
     }
 
+    .hambur__links {
+        position: absolute;
+        display: none;
+        right: 30px;
+        top: 50px;
+        text-align: right;
+        background-color: #893492;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    .hambur__links li{
+        margin: 5px 0;
+        display: block;
+    }
+    .navegacion__hambur:hover .hambur__links{
+        display: block;
+    }
+
     .presentacion{
         flex-direction: column;
         align-items: center;
@@ -515,7 +534,7 @@ El menú tipo hamburguesa en el index y la página productos aparece pero no imp
         margin: 10px 0;
     }
         
-    .oferta{
+    .tarjeta__oferta{
         grid-template-areas:
         "titulo"
         "imagen"
@@ -528,7 +547,7 @@ El menú tipo hamburguesa en el index y la página productos aparece pero no imp
     .oferta__img{
         margin: 20px 0;
     }
-    .oferta button{
+    .tarjeta__oferta button{
         margin-top: 20px;
     }
 
@@ -554,9 +573,9 @@ El menú tipo hamburguesa en el index y la página productos aparece pero no imp
 
 
 @media screen and (max-width: 450px) {
-    .oferta{
+    .tarjeta__oferta{
         font-size: 1.5rem;
-        box-shadow: -5px -5px 5px 5px rgb(137, 52, 146, 20%);
+        /* box-shadow: -5px -5px 5px 5px rgb(137, 52, 146, 20%); */
     }
 
     .productos__catalogo{
