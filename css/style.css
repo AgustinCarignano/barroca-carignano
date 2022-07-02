@@ -117,6 +117,7 @@ main{
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 1fr 1fr 1fr;
     font-size: 3rem;
+    color: #893492;
     text-align: center;
     justify-items: center;
     align-items: center;
@@ -215,11 +216,14 @@ main{
 .catalogo__items{
     padding: 10px;
     margin-right: 10px;
+    background-color: #E7D3CA;
     border: solid 2px #A67791;
     color: rgb(67, 67, 67);
     text-align: center;
-    line-height: 4rem;
+    line-height: 3rem;
     border-radius: 10px;
+    transition: transform 0.5s;
+    transition-delay: 0.3s;
 }
 
 .catalogo__items img{
@@ -239,6 +243,13 @@ main{
     margin-top: 30px; 
     border: solid 2px #A67791;
 }
+
+/* animaciones a tarjetas de productos. Las del menú hamburguesa están en al media querie */
+
+.catalogo__items:hover {
+    transform: scale(1.3);
+}
+
 
 /* Contacto */
 .paginaContacto{
@@ -293,11 +304,12 @@ main{
     font-family: 'Antic Slab', serif;
     font-size: 1.5rem;
     font-weight: bolder;
-    color: #E7D3CA;
-    background-color: #893492;
+    color: #893492;
+    background-color: #E7D3CA;
     padding: 0.5rem;
     border-radius: 10px;
     border: solid 2px #A67791;
+    transition: 0.3s;
 }
 .paginaContacto__mapa{
     width: 90%;
@@ -309,6 +321,12 @@ main{
 .paginaContacto__mapa iframe{
     width: 80%;
     margin-top: 30px;
+}
+
+/* Animaciones página contacto */
+.form__buttons button:hover{
+    background-color: #893492;
+    color: #E7D3CA;
 }
 
 /* Asesoría */
@@ -341,7 +359,7 @@ main{
     justify-content: space-evenly;
     width: 50%;
     min-width: 300px;
-    margin-left: 10px;
+    margin: 0 10px;
 }
 
 .articulo__img{
@@ -354,13 +372,6 @@ main{
     transition: transform 0.3s;
 }
 
-.container__articulo:hover {
-    background-image: linear-gradient(60deg, #A67791, #E7D3CA 20% 80%, #A67791);
-}
-.articulo__img img:hover {
-    transform: rotate(5deg);
-}
-
 .botonContacto{
     text-align: center;
     margin: 50px auto;
@@ -368,17 +379,35 @@ main{
     max-width: 1200px;
 }
 .botonContacto a{
-    color: #E7D3CA;
+    color: #893492;
+    transition: 0.3s;
+    /* color: #E7D3CA; */
 }
 .botonContacto button{
     font-family: 'Antic Slab', serif;
     font-size: 2rem;
     font-weight: bolder;
-    background-color: #893492;
+    background-color: #E7D3CA;
+    /* background-color: #893492; */
     padding: 0.5rem;
     border-radius: 10px;
     margin-top: 20px; 
     border: solid 2px #A67791;
+    transition: 0.3s;
+}
+
+/* Animaciones para página asesoramiento y casita barroca */
+.container__articulo:hover {
+    background-image: linear-gradient(60deg, #A67791, #E7D3CA 20% 80%, #A67791);
+}
+.container__articulo:hover img {
+    transform: rotate(5deg);
+}
+.botonContacto button:hover{
+    background-color: #893492;
+}
+.botonContacto button:hover a{
+    color: #E7D3CA;
 }
 
 /* La casita barroca */
@@ -409,19 +438,21 @@ main{
     transition: background-color 0.3s;
 }
 
-.quienesSomos h2:hover {
-    background-color: rgb(137, 52, 146, 80%);
-}
-.quienesSomos p:hover {
-    background-color: rgb(137, 52, 146, 80%);
-}
-
 .asesoria{
     font-size: 3rem;
 }
 .casita {
     font-size: 2rem;
 }
+
+/* Animaciones para banner de página Casita Barroca */
+.quienesSomos:hover h2 {
+    background-color: rgb(137, 52, 146, 80%);
+}
+.quienesSomos:hover p {
+    background-color: rgb(137, 52, 146, 80%);
+}
+
 
 
 /* Aplicando medias queries. Determiné cuatro breakpoint. El primero quizás esté de más si utilizo un flez para la pagina de productos en lugar de un grid, pero lo modifiqué para implementar las grillas y luego tuve que colocar un punto de break bastante alto.
@@ -473,6 +504,26 @@ El menú tipo hamburguesa en el index y la página productos aparece pero no imp
         margin-left: 20px;
     }
 
+    
+    .hambur__opciones {
+        position: absolute;
+        display: none;
+        left: 9px;
+        top: 200px;
+        text-align: left;
+        /* background-color: #A67791; */
+        padding: 10px;
+        font-size: 1.3rem;
+    }
+    .hambur__opciones li{
+        margin: 5px 0;
+        display: block;
+    }
+
+    .select__hambur:hover .hambur__opciones{
+        display: block;
+    }
+
     .quienesSomos{
         font-size: 2rem;
         line-height: 4rem;
@@ -515,12 +566,13 @@ El menú tipo hamburguesa en el index y la página productos aparece pero no imp
         text-align: right;
         background-color: #893492;
         padding: 10px;
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
     .hambur__links li{
         margin: 5px 0;
         display: block;
     }
+
     .navegacion__hambur:hover .hambur__links{
         display: block;
     }
